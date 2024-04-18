@@ -6,9 +6,15 @@ import Header from './component/Header';
 import '/node_modules/primeflex/primeflex.css';
 import 'primereact/resources/primereact.min.css';
 import Shopping from "./component/Shopping";
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+        
+        
 
 function App() {
   const [movie, setMovie] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
 
   const imageurl= "https://image.tmdb.org/t/p/w500/";
 
@@ -22,15 +28,25 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    const filtered = movie.filter(item => 
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [searchQuery, movie])
+
   return (
     <section>
       <Header />
+      <div className="flex justify-content-center">
+      <InputText type="text" placeholder="Search Movies..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+      <Button label="Search" className="sea-but" />
+      </div>
       <div className="grid pt-4">
-        {movie.map((item, index) => (
+        {filteredData.map((item, index) => (
           <>
           
           <Shopping 
-            key={index}
             index={index}
             title={item.title}
             image={imageurl+item.poster_path}

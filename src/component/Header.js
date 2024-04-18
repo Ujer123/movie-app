@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <div className="card">
-            <Toolbar center={centerContent} className="bg-gray-900 shadow-2" style={{ borderRadius: '', backgroundImage: 'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))' }} />
+            <Toolbar center={centerContent} className='head-tit'/>
         </div>
     );
 }

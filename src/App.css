@@ -2,7 +2,34 @@ body{
   background-color: grey;
 }
 
+.head-tit{
+  background-color: grey;
+  border: 0;
+}
+
 .card-poster{
   height: 200px;
   width: 200px;
+}
+
+.p-inputtext{
+  width: 800px;
+  background-color: black;
+  color: white;
+}
+
+.sea-but{
+  background-color: black;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px){
+
+  .p-inputtext{
+    width: 300px;
+  }
+  
+  .sea-but{
+    margin-left: 5px;
+  }
 }
