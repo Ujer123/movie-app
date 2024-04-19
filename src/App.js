@@ -8,6 +8,7 @@ import 'primereact/resources/primereact.min.css';
 import Shopping from "./component/Shopping";
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import Painting from "./component/Painting";
         
         
 
@@ -42,6 +43,7 @@ function App() {
       <InputText type="text" placeholder="Search Movies..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
       <Button label="Search" className="sea-but" />
       </div>
+      <Painting/>
       <div className="grid pt-4">
         {filteredData.map((item, index) => (
           <>

@@ -18,6 +18,17 @@ body{
   color: white;
 }
 
+.play-but{
+  background-color: red;
+}
+
+.p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next{
+  height: 50px;
+  width: 50px;
+  color: white;
+  border: 1px solid white;
+}
+
 .sea-but{
   background-color: black;
   margin-left: 5px;
